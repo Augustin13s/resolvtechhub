@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
 }
@@ -407,7 +408,7 @@ details p {
     background: rgba(0, 242, 255, 0.1);
     border: 1px solid var(--ciano);
     color: var(--ciano);
-    padding: 8px 20px;
+    padding: 8px;
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
@@ -918,4 +919,150 @@ html {
         width: 100%;            /* Ocupa a largura total */
         max-width: 100%;
     }
+}
+/* No Celular (Redmi Note 14 Pro) */
+@media (max-width: 600px) {
+    #hero-vendas {
+        padding-top: 200px !important; /* Aumentei muito para garantir que o título apareça */
+        display: block !important;
+    }
+
+    .busca-loja {
+        display: flex !important;
+        flex-direction: column !important; /* Força um embaixo do outro */
+        width: 90% !important; /* Não deixa encostar nas bordas da tela */
+        margin: 0 auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .busca-loja input {
+        width: 100% !important;
+        margin-bottom: 15px !important;
+        border-radius: 8px !important;
+        border: 1px solid #3b82f6 !important;
+        padding: 15px !important;
+    }
+
+    .busca-loja button {
+        width: 100% !important;
+        border-radius: 8px !important;
+        padding: 15px !important;
+    }
+}
+/* Estilo Específico para a Página de Políticas */
+.politicas-container {
+    max-width: 800px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+}
+
+.politicas-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.politicas-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--ciano), #3a7bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* Melhorando os Detalhes (FAQ Style) */
+.politicas-card details {
+    background: rgba(13, 27, 42, 0.6);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.politicas-card details:hover {
+    border-color: var(--ciano);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.politicas-card summary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--branco);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.politicas-card summary::after {
+    content: '+';
+    color: var(--ciano);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.politicas-card details[open] summary::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.politicas-card p {
+    margin-top: 15px;
+    line-height: 1.8;
+    color: rgba(240, 244, 248, 0.8);
+    border-top: 1px solid rgba(0, 242, 255, 0.1);
+    padding-top: 15px;
+}
+/* Estilização do Botão de Hospedagem */
+.btn-hospedagem {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--ciano); /* Use a variável ciano que definimos */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid var(--ciano);
+    border-radius: 50px; /* Bordas arredondadas estilo pílula */
+    transition: all 0.3s ease; /* Transição suave para o efeito */
+    margin-top: 20px;
+    text-transform: uppercase; /* Letras maiúsculas para dar imponência */
+    letter-spacing: 1px;
+}
+
+/* Efeito ao passar o mouse (Hover) / Tocar no Celular */
+.btn-hospedagem:hover {
+    background: var(--azul-escuro);
+    color: #6098d3; /* Cor escura do fundo para contraste */
+    box-shadow: 0 0 20px rgba(48, 64, 65, 0.6), 
+                0 0 40px rgba(64, 82, 83, 0.4);
+    transform: translateY(-3px); /* Levanta levemente o botão */
+}
+/* Definição da Animação */
+@keyframes pulsar-neon {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+        transform: scale(1.05); /* Aumenta levemente o tamanho */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+        transform: scale(1);
+    }
+}
+
+/* Aplicando a animação ao botão */
+.btn-hospedagem {
+    /* ... (mantenha o código anterior aqui) ... */
+    animation: pulsar-neon 2s infinite ease-in-out;
+}
+
+/* Pausa a animação quando o mouse está em cima para facilitar o clique */
+.btn-hospedagem:hover {
+    animation-play-state: paused;
 }
