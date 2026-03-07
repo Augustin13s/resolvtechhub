@@ -1066,3 +1066,636 @@ html {
 .btn-hospedagem:hover {
     animation-play-state: paused;
 }
+/* 1. ARRUMANDO O MENU (NAV) NO CELULAR */
+.nav-container {
+    background: #0a0c12;
+    padding: 15px;
+    border-bottom: 2px solid var(--ciano);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--ciano); /* Brilho neon no texto */
+}
+
+/* 2. ARRUMANDO O FORMULÁRIO DE CONTATO */
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+}
+
+#contato input, #contato textarea {
+    width: 100%;
+    padding: 12px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+#contato input:focus, #contato textarea:focus {
+    border-color: var(--card-bg);
+    box-shadow: 0 0 10px var(--card-bg); /* Efeito de brilho ao clicar */
+    outline: none;
+}
+
+#contato button {
+    background: var(--azul-profundo);
+    color: rgb(29, 176, 209);
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--card-bg);
+}
+
+/* 3. ANIMAÇÕES DE ENTRADA (FADE-IN) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação nas novas seções */
+#sobre, #servicos, #contato {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 4. EFEITO NO BOTÃO DE HOSPEDAGEM */
+.btn-hospedagem {
+    border: 2px solid var(--ciano);
+    color: var(--ciano);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.btn-hospedagem:hover {
+    background: var(--ciano);
+    color: black;
+    box-shadow: 0 0 30px var(--ciano);
+}
+/* Container do Menu */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, links na direita */
+    align-items: center;
+    padding: 15px 5%;
+    background: #0a0c12;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+/* Ajuste Perfeito para Celular */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* No celular, um embaixo do outro para caber tudo */
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+}
+/* --- RESET E BARRA DE PROGRESSO (LIMPA NO PC) --- */
+.progress-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: transparent !important; 
+    z-index: 9999 !important;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--ciano);
+    width: 0%;
+    box-shadow: 0 0 10px var(--ciano);
+}
+
+/* --- CONFIGURAÇÃO DO MENU (NAV) --- */
+.nav-container {
+    display: flex !important;
+    align-items: center !important;
+    background: #0a0c12 !important;
+    padding: 10px 5% !important;
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+/* --- COMPORTAMENTO NO PC (NOTEBOOK SAMSUNG) --- */
+@media (min-width: 769px) {
+    .nav-container {
+        justify-content: space-between !important; /* Logo na esquerda, Tags na direita */
+    }
+    .nav-links {
+        display: flex !important;
+        list-style: none !important;
+        gap: 30px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #area-produtos .filtros-container {
+        justify-content: center !important; /* Força filtros no centro no PC */
+    }
+}
+
+/* --- COMPORTAMENTO NO CELULAR (REDMI NOTE 14) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column !important; /* Empilha para centralizar */
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 15px 0 !important;
+    }
+    .nav-links {
+        display: flex !important;
+        justify-content: center !important; /* CENTRALIZA AS TAGS NO MEIO DA TELA */
+        width: 100% !important;
+        margin-top: 10px !important;
+        padding: 0 !important;
+        gap: 15px !important;
+    }
+}
+
+/* --- SEÇÃO DE CONTATO (OBLIGADA A APARECER) --- */
+#contato {
+    display: block !important;
+    clear: both !important;
+    padding: 60px 20px !important;
+    text-align: center !important;
+}
+
+#contato .contato-form {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    gap: 15px !important;
+}
+/* --- ESTILIZAÇÃO E ANIMAÇÃO: BOTÃO VER NA LOJA --- */
+.ver-loja-btn, 
+a[href*="loja"], 
+.combo-performance a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: #00f2ff; /* Ciano neon que você usa */
+    border: 2px solid #00f2ff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out; /* Transição suave para tudo */
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* Efeito ao passar o mouse ou tocar */
+.ver-loja-btn:hover, 
+a[href*="loja"]:hover {
+    background: #00f2ff;
+    color: #0a0c12; /* Fundo escuro do seu site */
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.6); /* Brilho neon externo */
+    transform: scale(1.05) translateY(-3px); /* Pulsação e leve subida */
+}
+
+/* Efeito de "Clique" para feedback tátil no celular */
+.ver-loja-btn:active {
+    transform: scale(0.95);
+}
+/* --- BARRA DE PROGRESSO (TOTALMENTE LIMPA NO TOPO) --- */
+.progress-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: transparent !important;
+    z-index: 9999 !important;
+}
+
+/* --- LOGO: TAMANHO CONTROLADO --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--branco);
+    min-width: 180px;
+}
+.logo span { color: var(--ciano); }
+
+/* --- MENU: DIREITA NO PC | CENTRO NO CELULAR --- */
+.nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 5% !important;
+    background: #0a0c12 !important;
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+        margin-left: auto !important; /* EMPURRA PARA A DIREITA NO PC */
+        gap: 30px !important;
+        list-style: none !important;
+    }
+}
+
+/* --- FILTROS E PRODUTOS: OBRIGADOS AO CENTRO --- */
+.filtros-container {
+    display: flex !important;
+    justify-content: center !important; /* CENTRALIZA OS BOTÕES (SSD, GAMER...) */
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px auto !important;
+    width: 100%;
+}
+
+/* --- SEÇÃO DE CONTATO: RESGATADA --- */
+#contato {
+    display: block !important;
+    clear: both !important;
+    padding: 80px 20px !important;
+    text-align: center !important;
+}
+
+.contato-form {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 500px !important;
+    margin: 0 auto !important; /* CENTRALIZA NO PC */
+    gap: 15px !important;
+}
+
+/* --- BOTÃO VER NA LOJA: ANIMAÇÃO GAMER --- */
+.btn-afiliado {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: var(--ciano);
+    border: 2px solid var(--ciano);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 15px;
+}
+
+.btn-afiliado:hover {
+    background: var(--ciano);
+    color: #0a0c12;
+    box-shadow: 0 0 20px var(--ciano-glow);
+    transform: translateY(-5px) scale(1.05); /* LEVITAÇÃO E PULSO */
+}
+
+/* --- AJUSTE REDMI (CELULAR) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column !important;
+        padding: 15px 0 !important;
+    }
+    .nav-links {
+        margin-left: 0 !important;
+        justify-content: center !important; /* CENTRALIZA NO CELULAR */
+        width: 100% !important;
+        margin-top: 10px !important;
+        padding: 0 !important;
+    }
+}
+/* --- ESTILO DOS CARDS DE TEXTO (A MENTE E CURADORIA) --- */
+.card-informativo {
+    background: rgba(15, 18, 26, 0.7); /* Fundo escuro profundo */
+    border: 1px solid rgba(0, 242, 255, 0.2); /* Borda ciano discreta */
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px; /* Largura para leitura confortável no PC */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(8px); /* Efeito de vidro */
+}
+
+.card-informativo:hover {
+    transform: translateY(-5px); /* Leve subida ao passar o mouse */
+    border-color: rgba(0, 242, 255, 0.6); /* Brilha mais no hover */
+}
+
+/* Títulos dentro dos cards */
+.card-informativo h2 {
+    color: #00f2ff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 4px solid #00f2ff; /* Detalhe lateral neon */
+    padding-left: 15px;
+}
+
+/* Texto dentro dos cards */
+.card-informativo p, .card-informativo strong {
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Ajuste para o seu Redmi Note 14 Pro */
+@media (max-width: 768px) {
+    .card-informativo {
+        margin: 25px 15px;
+        padding: 20px;
+    }
+    
+    .card-informativo h2 {
+        font-size: 1.4rem;
+    }
+}
+/* --- VARIÁVEIS E RESET --- */
+:root {
+    --azul-profundo: #050a14;
+    --card-bg: rgba(13, 27, 42, 0.8);
+    --ciano: #00f2ff;
+    --ciano-glow: rgba(0, 242, 255, 0.3);
+    --branco: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--azul-profundo); color: var(--branco); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* --- MENU (NAV): DIREITA NO PC | CENTRO NO REDMI --- */
+.nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 5% !important;
+    background: #0a0c12 !important;
+    position: fixed !important;
+    width: 100% !important;
+    top: 0; z-index: 1000;
+    border-bottom: 1px solid var(--ciano-glow);
+}
+
+.logo { font-size: 1.4rem; font-weight: bold; min-width: 150px; }
+.logo span { color: var(--ciano); }
+
+.nav-links { display: flex !important; list-style: none !important; gap: 25px !important; }
+
+@media (min-width: 769px) {
+    .nav-links { margin-left: auto !important; } /* EMPURRA PARA A DIREITA NO PC */
+}
+
+/* --- CARDS DE TEXTO (RETÂNGULOS NEON) --- */
+.card-informativo {
+    background: var(--card-bg) !important;
+    border: 1px solid rgba(0, 242, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 35px !important;
+    margin: 40px auto !important;
+    max-width: 850px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.card-informativo:hover { transform: translateY(-5px); border-color: var(--ciano); }
+
+.card-informativo h2 { color: var(--ciano); margin-bottom: 15px; border-left: 4px solid var(--ciano); padding-left: 15px; }
+
+/* --- IMAGENS: TAMANHO CONTROLADO --- */
+.img-produto-card {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px auto;
+    display: block;
+}
+
+/* --- BOTÃO VER NA LOJA: ANIMAÇÃO --- */
+.btn-afiliado {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid var(--ciano);
+    color: var(--ciano);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn-afiliado:hover {
+    background: var(--ciano);
+    color: #0a0c12;
+    box-shadow: 0 0 15px var(--ciano);
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVIDADE CELULAR (REDMI NOTE 14) --- */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column !important; padding: 15px 0 !important; }
+    .nav-links { justify-content: center !important; width: 100% !important; margin-top: 10px !important; gap: 15px !important; }
+    .card-informativo { margin: 20px 15px !important; padding: 20px !important; }
+}
+.nav-links a.active {
+    color: var(--ciano);
+    border-bottom: 2px solid var(--ciano);
+    padding-bottom: 5px;
+}
+/* Procure por isso no seu CSS e substitua */
+h1, .hero h1 { 
+    color: var(--ciano); 
+    font-size: clamp(1.5rem, 8vw, 3rem); /* O 'clamp' ajusta o tamanho sozinho entre celular e PC */
+    margin: 0; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px var(--ciano-glow);
+}
+/* --- MENU DESLIZANTE: EXCLUSIVO PARA CELULAR (REDMI) --- */
+@media (max-width: px) {
+    .nav-container {
+        flex-direction: column !important; /* Logo em cima, menu embaixo */
+        padding: 10px 0 !important;
+        align-items: center !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important; /* Força uma única linha */
+        flex-wrap: nowrap !important; /* Proíbe quebra de linha */
+        overflow-x: auto !important; /* Habilita o deslize horizontal */
+        -webkit-overflow-scrolling: touch; /* Suaviza o toque no Android */
+        
+        justify-content: flex-start !important; /* Alinha ao início para permitir o scroll */
+        width: 100% !important;
+        gap: 25px !important; /* Espaço confortável entre as tags */
+        padding: 10px 25px !important; /* Respiro nas laterais para não cortar o texto */
+        
+        /* Esconde a barra de rolagem visualmente */
+        scrollbar-width: none; 
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Esconde a barra no Chrome do Redmi */
+    }
+
+    .nav-links li {
+        flex: 0 0 auto; /* Impede que os links encolham */
+    }
+
+    .nav-links a {
+        font-size: 1rem !important;
+        white-space: nowrap !important; /* Mantém os nomes inteiros */
+        padding: 5px 2px !important;
+    }
+
+    /* Ajuste de respiro para o Hero não ficar coberto */
+    .hero {
+        padding-top: 150px !important; 
+    }
+}
+
+/* --- MANTÉM O PC IGUAL (SEM DESLIZE) --- */
+@media (min-width: 769px) {
+    .nav-container {
+        justify-content: space-between !important;
+    }
+    .nav-links {
+        overflow-x: visible !important;
+        justify-content: flex-end !important;
+    }
+}/* --- AJUSTE DE ESCALA REAL PARA CELULAR (EFEITO DPI) --- */
+@media (max-width: 768px) {
+    /* Diminui a escala global do site em 10% */
+    html {
+        font-size: 85% !important; 
+    }
+
+    /* Ajusta o espaçamento do topo para o menu não cobrir o título */
+    .hero {
+        padding-top: 110px !important;
+        padding-bottom: 30px !important;
+    }
+
+    /* Deixa os cards mais compactos para caber mais na tela */
+    .container {
+        padding: 10px !important;
+        margin-top: 0 !important;
+    }
+
+    .card, .card-informativo {
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+        border-radius: 10px !important;
+    }
+
+    /* Títulos dos cards ficam mais finos e elegantes */
+    h2 {
+        font-size: 1.4rem !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Melhora o menu deslizante para a nova escala */
+    .nav-links {
+        gap: 15px !important;
+        padding: 8px 15px !important;
+    }
+}
+/* --- AJUSTE FINO DE ESPAÇAMENTO (TIRANDO O BURACO) --- */
+@media (max-width: 768px) {
+    /* Diminuímos o empurrão do body para o conteúdo subir um pouco */
+    body {
+        padding-top: 100px !important; /* Ajuste aqui: se ainda tiver muito espaço, mude para 90px */
+    }
+
+    /* Removemos margens duplas que criam o espaço vazio nas páginas internas */
+    .container, 
+    main.container,
+    .politicas-container {
+        margin-top: 0 !important;
+        padding-top: 10px !important; /* Deixa o título mais próximo do menu */
+    }
+
+    /* Ajuste específico para a Home (PC FLASH) */
+    .hero {
+        padding-top: 20px !important; /* Como o body já tem 100px, aqui precisa ser pouco */
+    }
+}
+/* --- AJUSTE DE RESPIRO: APENAS ARTIGOS E PRODUTOS --- */
+@media (max-width: 766px) {
+    /* Seleciona especificamente a área principal das páginas de Artigos e Produtos */
+    body:has(.grid-artigos) main,
+    body:has(.produtos-grid) main,
+    main.container {
+        padding-top: px !important; /* Aumentamos levemente para descolar do menu */
+    }
+
+    /* Garante que o título interno (H2) tenha uma margem extra no topo */
+    .grid-artigos h2, 
+    h2[style*="text-align: center"] {
+        margin-top: 15px !important; /* Dá o espacinho final para o título "respirar" */
+    }
+}
+/* --- AJUSTE DE ALTURA EXCLUSIVO PARA PC (PRODUTOS E ARTIGOS) --- */
+@media (min-width: 769px) {
+    /* Diminui o espaço no topo para o título subir no notebook */
+    body:has(.grid-artigos) main,
+    body:has(.produtos-grid) main,
+    main.container {
+        padding-top: 50px !important; /* Valor menor para o PC */
+    }
+
+    /* Remove qualquer margem extra que esteja empurrando o título do PC */
+    .grid-artigos h2, 
+    .produtos-grid h2,
+    h2[style*="text-align: center"] {
+        margin-top: 0 !important;
+    }
+}

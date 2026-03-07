@@ -24,15 +24,14 @@
     <link rel="icon" type="image/png" href="Logotipo Startup Tecnologia Moderno Azul e Roxo.png">
 </head>
 <body>
-   <nav class="navbar">
-    <div class="nav-content">
-        <a href="#" class="nav-logo">ResolvTechHub</a>
-        <div class="nav-links">
-            <a href="#ssd">SSDs</a>
-            <a href="#teclados">Teclados</a>
-            <a href="#mouses">Mouses</a>
-        </div>
-    </div>
+ <nav class="nav-container">
+    <div class="logo">Resolv<span>TechHub</span></div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="artigos.html">Artigos</a></li> <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
 </nav>
 
 <header class="hero">
@@ -56,6 +55,19 @@
             <h3>🔍 Por que confiar em nossas escolhas?</h3>
             <p>Diferente de grandes sites que apenas listam produtos, aqui no <strong>ResolvTechHub</strong> as indicações são baseadas em testes reais de durabilidade e performance para quem estuda e joga pesado.</p>
         </div>
+
+<section id="servicos" class="card-informativo">
+    <h2>Curadoria <span class="highlight">Elite</span></h2>
+    <p>Produtos selecionados a dedo para o seu setup.</p>
+    
+    <div class="produtos-grid">
+        <div class="produto-card">
+            <img src="img/parts.png" alt="Hardware" class="img-produto-card">
+            <h3>Combo Performance</h3>
+            <p>O melhor custo-benefício para quem joga ou está começando na programação.</p>
+        </div>
+    </div>
+</section>
 
         <div id="area-produtos">
         <div class="filtros-container">
@@ -109,7 +121,6 @@
 
     </div>
 </section>
-
     
        <div class="card item-tech ssd" id="guia-upgrade">
             <h2>🛠️ Guia: Como dar vida nova ao seu PC</h2>
@@ -176,6 +187,7 @@
         <p>🐾 <strong>Gwyn avisa:</strong> Se o seu PC demora mais que o tempo de eu comer um sachê para ligar, você precisa de um SSD!</p>
     </div>
 </div>
+
         
         <div class="card item-tech" id="calculadora-setup">
             <h2>🧮 Calculadora de Setup Ideal</h2>
@@ -187,7 +199,9 @@
                     <option value="selecione">-- Selecione --</option>
                     <option value="estudo">Estudar e Trabalhar (Foco em Agilidade)</option>
                     <option value="gamer">Jogar (Foco em Performance)</option>
+                    <option value="gamer-completo">Setup Gamer Completo (O Máximo do Hub)</option>
                     <option value="completo">Setup Completo (Vida Nova ao PC)</option>
+
                 </select>
 
                 <div id="resultado-calculo" class="resultado-box hidden">
@@ -328,6 +342,19 @@
     </div>
 </section>
 
+<section id="contato" class="container">
+    <h2>Entre em <span class="destaque">Contato</span></h2>
+    <p>Para parcerias ou dúvidas técnicas, envie-nos uma mensagem.</p>
+   
+    <form action="https://formspree.io/f/mnjgnpdl" method="POST" class="contato-form">
+        <input type="text" name="nome" placeholder="Seu Nome" required>
+        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+        <textarea name="mensagem" placeholder="Como podemos te ajudar?"></textarea>
+        
+        <button type="submit" class="btn-neon">Enviar Mensagem</button>
+    </form>
+</section>
+
 </section> 
 
 <div style="text-align: center; margin: 40px 0;">
@@ -415,6 +442,11 @@
         textoKit.innerText = "Teclado Mecânico + Mouse Pro";
         valorKit.innerText = "R$ 329,47";
         btnHub.href = "combos.html#gamer"; // Pula para o ID gamer
+    
+    } else if (objetivo === 'gamer-completo') { // NOVA LÓGICA AQUI
+        textoKit.innerText = "SSD NVMe + Teclado Mecânico + Mouse 12k DPI";
+        valorKit.innerText = "R$ 5.500,60";
+        btnHub.href = "combos.html#gamer-completo"; 
     } else if (objetivo === 'completo') {
         textoKit.innerText = "SSD + Teclado + Mouse";
         valorKit.innerText = "R$ 791,80";
