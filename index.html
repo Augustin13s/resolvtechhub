@@ -361,9 +361,14 @@
     <h2 style="color: var(--branco);">Quer ver seu produto aqui?</h2>
     <p style="color: rgba(240, 244, 248, 0.7); margin-bottom: 20px;">Hospede sua venda de tecnologia com o visual do ResolvTechHub.</p>
     
-    <a href="mailto:resolvtechhub@gmail.com?subject=Olá! Gostaria de hospedar uma venda. Seguem os dados do produto:" class="btn-hospedagem">
-    <i class="fas fa-rocket"></i> Hospedar Minha Venda
-</a>
+    <a href="#" 
+       id="btn-contato"
+       class="btn-hospedagem" 
+       data-user="resolvtechhub" 
+       data-domain="gmail.com"
+       style="cursor: pointer;">
+        <i class="fas fa-rocket"></i> Hospedar Minha Venda
+    </a>
 </div>
 
     <footer>
@@ -395,6 +400,23 @@
             }
         });
     }
+    document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('btn-contato');
+    
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // Impede o link '#' de pular a página
+            
+            // Pega as partes do e-mail dos atributos que escondemos
+            const user = this.getAttribute('data-user');
+            const domain = this.getAttribute('data-domain');
+            const subject = encodeURIComponent("Olá! Gostaria de hospedar uma venda. Seguem os dados do produto:");
+            
+            // Monta o link final e abre o app de e-mail do usuário
+            window.location.href = `mailto:${user}@${domain}?subject=${subject}`;
+        });
+    }
+});
 
     window.onscroll = function() {
         scrollFunction();
