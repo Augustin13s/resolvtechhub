@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artigos e Guias - ResolvTechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="Logotipo Startup Tecnologia Moderno Azul e Roxo.png">
+
+    <style>
+        @media (max-width: 768px) {
+            .grid-artigos {
+                gap: 12px !important; /* Aproxima os cards no seu Redmi */
+            }
+            .card-informativo {
+                margin-bottom: 0px !important; /* Tira o vácuo entre os cards */
+            }
+            .container {
+                padding-top: 100px !important; /* Sobe o conteúdo para não rolar tanto */
+            }
+            h2 {
+                margin-bottom: 20px !important; /* Sobe a Central de Guias */
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,48 +34,67 @@
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="artigos.html" class="active">Artigos</a></li>
         <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
     </ul>
 </nav>
 
-<main class="container" style="padding-top: 120px;">
-    <h2 style="text-align: center; color: var(--ciano); margin-bottom: 30px;">📚 Central de Guias da Tropa</h2>
+<main class="container" style="padding: 120px 20px 80px 20px; max-width: 1200px; margin: 0 auto;">
     
-    <div class="grid-artigos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <h2 style="text-align: center; color: var(--ciano); margin-bottom: 40px; font-size: 1.8rem;">
+        <i class="fa-solid fa-book-open"></i> Central de Guias da Tropa
+    </h2>
+    
+    <div class="grid-artigos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
         
-        <div class="card-informativo" style="margin: 0 !important;">
-            <span class="badge-beneficio">⚡ Hardware</span>
-            <h3>SSD vs HD: qual vale mais a pena?</h3>
-            <p>Descubra por que o upgrade de disco é a melhor forma de salvar seu PC antigo.</p>
-            <a href="artigo-ssd-hd.html" class="btn-pequeno">Ler artigo completo</a>
+        <div class="card-informativo" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--ciano);">
+            <div>
+                <span class="badge-beneficio"><i class="fa-solid fa-bolt"></i> Hardware</span>
+                <h3 style="margin-top: 15px;">SSD vs HD: qual vale mais a pena?</h3>
+                <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">Descubra por que o upgrade de disco é a melhor forma de salvar seu PC antigo.</p>
+            </div>
+            <a href="artigo-ssd-hd.html" class="btn-loja" style="padding: 10px; text-align: center; font-size: 0.85rem; text-decoration: none;">Ler artigo completo</a>
+        </div>
+        
+        <div class="card-informativo" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ff00ff;">
+            <div>
+                <span class="badge-beneficio" style="border-color: #ff00ff; color: #ff00ff;"><i class="fa-solid fa-microchip"></i> Tutorial</span>
+                <h3 style="margin-top: 15px;">Como escolher um SSD para notebook</h3>
+                <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">SATA ou NVMe? Aprenda a identificar o modelo certo para o seu setup.</p>
+            </div>
+            <a href="guia-escolha-ssd.html" class="btn-loja" style="padding: 10px; text-align: center; font-size: 0.85rem; text-decoration: none;">Ler artigo completo</a>
         </div>
 
-        <div class="card-informativo" style="margin: 0 !important;">
-            <span class="badge-beneficio">🚀 Tutorial</span>
-            <h3>Como escolher um SSD para notebook</h3>
-            <p>SATA ou NVMe? Aprenda a identificar o modelo certo para o seu setup.</p>
-            <a href="guia-escolha-ssd.html" class="btn-pequeno">Ler artigo completo</a>
+        <div class="card-informativo" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #00ff00;">
+            <div>
+                <span class="badge-beneficio" style="border-color: #00ff00; color: #00ff00;"><i class="fa-solid fa-mouse"></i> Periféricos</span>
+                <h3 style="margin-top: 15px;">5 mouses baratos que valem a pena</h3>
+                <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">Precisão para jogos e conforto para as suas horas de estudo diárias.</p>
+            </div>
+            <a href="artigo-mouse.html" class="btn-loja" style="padding: 10px; text-align: center; font-size: 0.85rem; text-decoration: none;">Ler artigo completo</a>
         </div>
 
-        <div class="card-informativo" style="margin: 0 !important;">
-            <span class="badge-beneficio">🖱️ Periféricos</span>
-            <h3>5 mouses baratos que valem a pena</h3>
-            <p>Precisão para jogos e conforto para 5 horas de estudo diárias.</p>
-            <a href="artigo-mouse.html" class="btn-pequeno">Ler artigo completo</a>
+        <div class="card-informativo" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ff9900;">
+            <div>
+                <span class="badge-beneficio" style="border-color: #ff9900; color: #ff9900;"><i class="fa-solid fa-keyboard"></i> Setup</span>
+                <h3 style="margin-top: 15px;">Melhor teclado custo-benefício</h3>
+                <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">Os modelos mais robustos aprovados pela supervisão do Gwyn.</p>
+            </div>
+            <a href="artigo-teclado.html" class="btn-loja" style="padding: 10px; text-align: center; font-size: 0.85rem; text-decoration: none;">Ler artigo completo</a>
         </div>
 
-        <div class="card-informativo" style="margin: 0 !important;">
-            <span class="badge-beneficio">⌨️ Setup</span>
-            <h3>Melhor teclado custo-benefício</h3>
-            <p>Os modelos mais robustos testados e aprovados pela supervisão do Gwyn.</p>
-            <a href="artigo-teclado.html" class="btn-pequeno">Ler artigo completo</a>
+        <div class="card-informativo" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ff00ff;">
+            <div>
+                <span class="badge-beneficio" style="border-color: #ff00ff; color: #ff00ff;"><i class="fa-solid fa-laptop"></i> Notebook</span>
+                <h3 style="margin-top: 15px;">Como escolher um notebook</h3>
+                <p style="color: #bbb; font-size: 0.95rem; margin-bottom: 20px;">RAM de 16GB é mesmo necessária? O que mudou no hardware em 2026.</p>
+            </div>
+            <a href="artigo-notebook.html" class="btn-loja" style="padding: 10px; text-align: center; font-size: 0.85rem; text-decoration: none;">Ler artigo completo</a>
         </div>
 
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2026 ResolvTechHub | Supervisão Técnica: Gwyn e Júnior 🐾</p>
+<footer style="padding: 40px 0; text-align: center; border-top: 1px solid #222; margin-top: 50px;">
+    <p style="color: gray; font-size: 0.8rem;">&copy; 2026 ResolvTechHub | Supervisão Técnica: Gwyn e Júnior 🐾</p>
 </footer>
 
 </body>

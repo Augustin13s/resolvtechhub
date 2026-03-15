@@ -1699,3 +1699,397 @@ h1, .hero h1 {
         margin-top: 0 !important;
     }
 }
+.btn-loja {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+/* --- ESTILO PADRÃO DOS BOTÕES DE LOJA --- */
+.btn-loja {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 5px;
+    /* Começa com borda e texto neon, fundo transparente */
+    background-color: transparent;
+    border: 2px solid var(--ciano);
+    color: var(--ciano);
+    box-shadow: 0 0 5px var(--ciano);
+}
+
+/* --- EFEITO AO PASSAR O MOUSE (HOVER) --- */
+/* Quando passar o mouse no Mercado Livre, ele ganha o fundo amarelo */
+.btn-loja i.fa-handshake {
+    color: #fff159; /* Ícone começa com a cor da marca */
+}
+.btn-loja:hover.btn-ml {
+    background-color: #fff159;
+    color: #333;
+    box-shadow: 0 0 15px #fff159;
+    border-color: #fff159;
+}
+.btn-loja:hover.btn-ml i.fa-handshake {
+    color: #333;
+}
+
+/* Quando passar o mouse na Amazon, ela ganha o fundo laranja */
+.btn-loja i.fa-cart-shopping {
+    color: #ff9900; /* Ícone começa com a cor da marca */
+}
+.btn-loja:hover.btn-amazon {
+    background-color: #ff9900;
+    color: white;
+    box-shadow: 0 0 15px #ff9900;
+    border-color: #ff9900;
+}
+.btn-loja:hover.btn-amazon i.fa-cart-shopping {
+    color: white;
+}
+/* RESET GERAL - Mata vãos e espaços automáticos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* CONFIGURAÇÃO DA ABA SUPERIOR (Igual à foto do celular) */
+.top-bar {
+    background-color: #0a0a0a;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    width: 100%;
+    display: block; /* Garante que a árvore fique abaixo do título */
+    text-align: left;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.brand i {
+    color: #00ffff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* MENU DE ÁRVORE */
+.tree-nav ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.tree-nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn-voltar {
+    color: gray;
+    text-decoration: none;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* CONTAINER DE CONTEÚDO */
+.content-container {
+    padding: 20px;
+}
+
+/* CARD INFORMATIVO (Design Neon) */
+.card-informativo {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o card no notebook */
+}
+
+.badge {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    border: 1px solid #00ffff;
+}
+
+/* BOTÕES DE COMPRA */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-loja {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* CONFIGURAÇÃO PARA NOTEBOOK (Telas Maiores) */
+@media screen and (min-width: 1024px) {
+    .top-bar {
+        padding: 20px 10%; /* Dá mais respiro nas laterais no PC */
+    }
+    
+    .card-informativo {
+        margin-top: 50px; /* Desce um pouco o card no notebook */
+    }
+}
+/* RESET DE CÓDIGO FONTE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* O CONTAINER PAI */
+.logo-container {
+    background: #0a0a0a;
+    width: 100%;
+    padding: 25px 20px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGO: CENTRALIZADA NO CELULAR */
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza no celular */
+    gap: 12px;
+    margin-bottom: 30px; /* O espaço que você queria "entre" eles */
+    width: 100%;
+}
+
+.logo-box i {
+    color: #00ffff;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.logo-box h1 {
+    color: #fff;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+/* ÁRVORE: SEMPRE À ESQUERDA */
+.tree-list {
+    list-style: none;
+    align-self: flex-start; /* Força a árvore a ficar na esquerda no celular */
+    padding-left: 5px;
+}
+
+.tree-list li {
+    margin-bottom: 10px;
+}
+
+.tree-list a {
+    color: #00ffff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.voltar-link {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+/* CONFIGURAÇÃO PARA NOTEBOOK (TELAS GRANDES) */
+@media screen and (min-width: 1024px) {
+    /* No Notebook, a Logo deixa de ser centralizada e vai para a esquerda */
+    .logo-box {
+        justify-content: flex-start; 
+        margin-bottom: 20px;
+    }
+
+    .logo-container {
+        padding: 30px 10%; /* Ajuste de respiro para tela larga */
+    }
+}
+/* RESET TOTAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505;
+}
+
+/* --- BOX 1: CONFIGURAÇÃO DA LOGO --- */
+.box-logo {
+    width: 100%;
+    padding: 25px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza no Celular */
+    background: #0a0a0a;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.box-logo i {
+    color: #00ffff;
+    font-size: 1.8rem;
+    margin-right: 12px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.box-logo h1 {
+    color: #fff;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+/* --- BOX 2: CONFIGURAÇÃO DA ÁRVORE --- */
+.box-tree {
+    width: 100%;
+    padding: 20px;
+    background: #050505; /* Cor diferente para marcar a troca de box */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Sempre na Esquerda */
+}
+
+.tree-list {
+    list-style: none;
+}
+
+.tree-list a {
+    color: #00ffff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.voltar-link {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.75rem;
+    margin-top: 10px;
+}
+
+/* --- AJUSTE PARA NOTEBOOK (TELAS GRANDES) --- */
+@media screen and (min-width: 1024px) {
+    /* No Notebook, a logo sai do centro e vai para a esquerda */
+    .box-logo {
+        justify-content: flex-start;
+        padding-left: 10%;
+    }
+
+    .box-tree {
+        padding-left: 10%;
+        margin-top: 0; /* Garante que fiquem próximas mas em boxes separadas */
+    }
+}
+/* 1. MATA O VÃO PRETO NO TOPO DO CELULAR */
+#pagina-categoria {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. A MÁGICA DO ALINHAMENTO */
+.logo-header {
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; /* CENTRALIZA NO CELULAR */
+    
+    /* Garante que comece no topo absoluto */
+    margin-top: 0 !important; 
+}
+
+.logo-header i {
+    color: #00ffff;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.logo-header h1 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0 !important;
+}
+
+/* 3. MUDANÇA PARA O NOTEBOOK (PC) */
+@media screen and (min-width: 1024px) {
+    .logo-header {
+        justify-content: flex-start !important; /* VAI PARA A ESQUERDA NO PC */
+        padding-left: 10% !important;
+    }
+}
+ /* CSS Adicional para garantir o respiro direto no arquivo */
+        .card-informativo {
+            margin-bottom: 60px !important; /* Aumentei o espaço para 60px */
+            padding: 25px;
+            background: #0d1117;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        .lista-cards {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .btn-loja {
+            margin-top: 10px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
